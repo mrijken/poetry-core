@@ -329,7 +329,7 @@ class Package(object):
                 dependency = FileDependency(
                     name, file_path, category=category, base=self.root_dir
                 )
-            elif "path" in constraint:
+            elif "path" in constraint and "version" not in constraint:
                 path = Path(constraint["path"])
 
                 if self.root_dir:
